@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "495700700414",
+    "project_id": "kapde-20c40",
+    "storage_bucket": "kapde-20c40.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495700700414:android:958a89acdccfa260c089af",
+        "android_client_info": {
+          "package_name": "com.example.kapde"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ0QwS7aEhIHfntJ1tnzNu2X9JdNPtCl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495700700414:android:f488331ff2677e46c089af",
+        "android_client_info": {
+          "package_name": "com.example.kapdeapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ0QwS7aEhIHfntJ1tnzNu2X9JdNPtCl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
