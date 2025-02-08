@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:kapde/firebase_options.dart';
 import 'package:kapde/screens/HomeScreen.dart';
 import 'package:kapde/theme/app_theme.dart';
-
+ 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
