@@ -1,19 +1,22 @@
-buildscript {
-    repositories {
-        google()  // Make sure this is added
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.4'
-        classpath 'com.google.gms:google-services:4.3.10'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.10"  // Update Kotlin plugin
-    }
-}
-
-
 allprojects {
     repositories {
-        google()  // Make sure this is added
+        google()
         mavenCentral()
     }
+}
+ dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"  // Update Kotlin plugin
+    }
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
 }
