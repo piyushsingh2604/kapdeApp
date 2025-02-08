@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.kapdeapp"
+    namespace = "com.example.kapde"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
