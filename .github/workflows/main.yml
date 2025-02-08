@@ -41,7 +41,7 @@ jobs:
         run: flutter build apk
 
       - name: Upload APK Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2  # Updated version
         with:
           name: release-apk
           path: build/app/outputs/apk/release/app-release.apk
