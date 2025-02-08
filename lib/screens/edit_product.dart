@@ -6,7 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:kapdeapp/screens/HomeScreen.dart';
+import 'package:kapde/screens/HomeScreen.dart';
 
 class EditProductScreen extends StatefulWidget {
   final String id;

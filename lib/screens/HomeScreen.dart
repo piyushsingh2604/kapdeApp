@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:kapdeapp/screens/add_product_screen.dart';
-import 'package:kapdeapp/screens/edit_product.dart';
+import 'package:kapde/screens/add_product_screen.dart';
+import 'package:kapde/screens/edit_product.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
             );
           } else if (snapshot.hasError) {
             return Center(
-              child: Text("Error: ${snapshot.hasError}"),
+              child: Text("Error: ${snapshot.error}"),
             );
           } else if (snapshot.hasData) {
             final data = snapshot.data!.docs;

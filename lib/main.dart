@@ -1,15 +1,20 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:kapdeapp/firebase_options.dart';
-import 'package:kapdeapp/screens/HomeScreen.dart';
-import 'package:kapdeapp/theme/app_theme.dart';
+import 'package:kapde/firebase_options.dart';
+import 'package:kapde/screens/HomeScreen.dart';
+import 'package:kapde/theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  runApp(MyApp());
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    runApp(MyApp());
+  } catch (e) {
+    print('Firebase initialization failed: $e');
+    runApp(MyApp()); 
+  }
 }
 
 class MyApp extends StatelessWidget {
