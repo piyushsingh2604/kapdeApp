@@ -7,21 +7,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class AddProductScreen extends StatefulWidget {
+  const AddProductScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<AddProductScreen> createState() => _AddProductScreenState();
 }
 
 // des
-class _HomeScreenState extends State<HomeScreen> {
+class _AddProductScreenState extends State<AddProductScreen> {
 //  input field
-  TextEditingController _productName = TextEditingController();
-  TextEditingController _productPrice = TextEditingController();
-  TextEditingController _productSize = TextEditingController();
-  TextEditingController _productMaterial = TextEditingController();
-  TextEditingController _productdes = TextEditingController();
+  final TextEditingController _productName = TextEditingController();
+  final TextEditingController _productPrice = TextEditingController();
+  final TextEditingController _productSize = TextEditingController();
+  final TextEditingController _productMaterial = TextEditingController();
+  final TextEditingController _productdes = TextEditingController();
 
   // image path
   File? _image;
@@ -82,7 +82,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffFFF9F9),
       appBar: AppBar(
+        backgroundColor: Color(0xffFFF9F9),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back)),
         elevation: 0,
         title: Text("Kapde"),
         centerTitle: true,
@@ -284,16 +291,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 InkWell(
                   onTap: addButton,
                   child: Container(
+                    height: 45,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6),
+                      color: Color(0xff22d292),
+                    ),
                     child: Center(
                       child: Text(
                         "Next",
                         style: TextStyle(color: Colors.white, fontSize: 19),
                       ),
-                    ),
-                    height: 45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      color: Color(0xff22d292),
                     ),
                   ),
                 ),
