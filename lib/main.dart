@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:kapdeapp/firebase_options.dart';
 import 'package:kapdeapp/screens/HomeScreen.dart';
-import 'package:kapdeapp/screens/add_product_screen.dart';
 import 'package:kapdeapp/theme/app_theme.dart';
 
 void main() async {

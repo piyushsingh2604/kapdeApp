@@ -27,17 +27,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 builder: (context) => AddProductScreen(),
               ));
         },
+        backgroundColor: Colors.blueAccent,
         child: Icon(
           Icons.add,
           color: Colors.white,
         ),
-        backgroundColor: Colors.blueAccent,
       ),
       backgroundColor: Color(0xffFFF9F9),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Color(0xffFFF9F9),
-        title: Text("Edit"),
+        title: Text("Kapde"),
+        centerTitle: true,
         elevation: 0,
       ),
       body: StreamBuilder(
@@ -53,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
             );
           } else if (snapshot.hasData) {
             final data = snapshot.data!.docs;
-            return Container(
+            return SizedBox(
               height: screenHeight * 0.99,
               child: ListView.builder(
                 itemCount: data.length,

@@ -10,7 +10,7 @@ import 'package:kapdeapp/screens/HomeScreen.dart';
 
 class EditProductScreen extends StatefulWidget {
   final String id;
-  EditProductScreen({required this.id});
+  const EditProductScreen({super.key, required this.id});
   @override
   State<EditProductScreen> createState() => _EditProductScreenState();
 }
@@ -29,7 +29,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
             },
             icon: Icon(Icons.arrow_back)),
         elevation: 0,
-        title: Text("Kapde"),
+        title: Text("Edit"),
         centerTitle: true,
       ),
       body: StreamBuilder(
@@ -48,75 +48,75 @@ class _EditProductScreenState extends State<EditProductScreen> {
               );
             } else if (snapshot.hasData) {
               final data = snapshot.data;
-              final _formKey = GlobalKey<FormState>();
+              final formKey = GlobalKey<FormState>();
 
 //  input field
-              TextEditingController _productName =
+              TextEditingController productName =
                   TextEditingController(text: data!['productName']);
-              final TextEditingController _productPrice =
+              final TextEditingController productPrice =
                   TextEditingController(text: data['productPrice']);
-              final TextEditingController _productSize =
+              final TextEditingController productSize =
                   TextEditingController(text: data['productSize']);
-              final TextEditingController _productMaterial =
+              final TextEditingController productMaterial =
                   TextEditingController(text: data['productMaterial']);
-              final TextEditingController _productdes =
+              final TextEditingController productdes =
                   TextEditingController(text: data['des']);
 
               // image path
-              File? _image;
-              final TextEditingController _frontController =
+              File? image;
+              final TextEditingController frontController =
                   TextEditingController(text: data['frontImage']);
-              final TextEditingController _backController =
+              final TextEditingController backController =
                   TextEditingController(text: data['backImage']);
-              final TextEditingController _leftController =
+              final TextEditingController leftController =
                   TextEditingController(text: data['leftImage']);
-              final TextEditingController _rightController =
+              final TextEditingController rightController =
                   TextEditingController(text: data['rightImage']);
 
-              Future<void> _pickFrontImage() async {
+              Future<void> pickFrontImage() async {
                 final picker = ImagePicker();
                 final XFile? pickedFile =
                     await picker.pickImage(source: ImageSource.gallery);
                 if (pickedFile != null) {
                   setState(() {
-                    _image = File(pickedFile.path);
-                    _frontController.text = _image!.path;
+                    image = File(pickedFile.path);
+                    frontController.text = image!.path;
                   });
                 }
               }
 
-              Future<void> _backImage() async {
+              Future<void> backImage() async {
                 final picker = ImagePicker();
                 final XFile? pickedFile =
                     await picker.pickImage(source: ImageSource.gallery);
                 if (pickedFile != null) {
                   setState(() {
-                    _image = File(pickedFile.path);
-                    _backController.text = _image!.path;
+                    image = File(pickedFile.path);
+                    backController.text = image!.path;
                   });
                 }
               }
 
-              Future<void> _leftImage() async {
+              Future<void> leftImage() async {
                 final picker = ImagePicker();
                 final XFile? pickedFile =
                     await picker.pickImage(source: ImageSource.gallery);
                 if (pickedFile != null) {
                   setState(() {
-                    _image = File(pickedFile.path);
-                    _leftController.text = _image!.path;
+                    image = File(pickedFile.path);
+                    leftController.text = image!.path;
                   });
                 }
               }
 
-              Future<void> _rightImage() async {
+              Future<void> rightImage() async {
                 final picker = ImagePicker();
                 final XFile? pickedFile =
                     await picker.pickImage(source: ImageSource.gallery);
                 if (pickedFile != null) {
                   setState(() {
-                    _image = File(pickedFile.path);
-                    _rightController.text = _image!.path;
+                    image = File(pickedFile.path);
+                    rightController.text = image!.path;
                   });
                 }
               }
@@ -125,14 +125,14 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20, right: 20),
                   child: Form(
-                    key: _formKey,
+                    key: formKey,
                     child: Column(
                       children: [
                         SizedBox(
                           height: 25,
                         ),
                         TextFormField(
-                          controller: _productName,
+                          controller: productName,
                           keyboardType: TextInputType.name,
                           decoration: InputDecoration(
                               label: Text("Enter product Name"),
@@ -152,7 +152,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           height: 20,
                         ),
                         TextFormField(
-                          controller: _productPrice,
+                          controller: productPrice,
                           inputFormatters: [
                             FilteringTextInputFormatter.digitsOnly
                           ],
@@ -175,7 +175,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           height: 20,
                         ),
                         TextFormField(
-                          controller: _productSize,
+                          controller: productSize,
                           keyboardType: TextInputType.name,
                           decoration: InputDecoration(
                               label: Text("Enter product size"),
@@ -195,7 +195,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           height: 20,
                         ),
                         TextFormField(
-                          controller: _productMaterial,
+                          controller: productMaterial,
                           keyboardType: TextInputType.name,
                           decoration: InputDecoration(
                               label: Text("Enter product Material"),
@@ -215,9 +215,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           height: 20,
                         ),
                         TextFormField(
-                          controller: _frontController,
+                          controller: frontController,
                           onTap: () {
-                            _pickFrontImage();
+                            pickFrontImage();
                           },
                           readOnly: true,
                           decoration: InputDecoration(
@@ -238,9 +238,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           height: 20,
                         ),
                         TextFormField(
-                          controller: _backController,
+                          controller: backController,
                           onTap: () {
-                            _backImage();
+                            backImage();
                           },
                           readOnly: true,
                           decoration: InputDecoration(
@@ -261,9 +261,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           height: 20,
                         ),
                         TextFormField(
-                          controller: _leftController,
+                          controller: leftController,
                           onTap: () {
-                            _leftImage();
+                            leftImage();
                           },
                           readOnly: true,
                           decoration: InputDecoration(
@@ -284,9 +284,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           height: 20,
                         ),
                         TextFormField(
-                          controller: _rightController,
+                          controller: rightController,
                           onTap: () {
-                            _rightImage();
+                            rightImage();
                           },
                           readOnly: true,
                           decoration: InputDecoration(
@@ -307,7 +307,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                           height: 20,
                         ),
                         TextFormField(
-                          controller: _productdes,
+                          controller: productdes,
                           maxLines: 4,
                           decoration: InputDecoration(
                               hintText: "Enter your Product Description",
@@ -328,30 +328,30 @@ class _EditProductScreenState extends State<EditProductScreen> {
                         ),
                         InkWell(
                           onTap: () {
-                            if (_formKey.currentState!.validate()) {
+                            if (formKey.currentState!.validate()) {
                               FirebaseFirestore.instance
                                   .collection('Products')
                                   .doc(widget.id)
                                   .update({
-                                "productName": _productName.text.trim(),
-                                "productPrice": _productPrice.text.trim(),
-                                "productSize": _productSize.text.trim(),
-                                "productMaterial": _productMaterial.text.trim(),
-                                "frontImage": _frontController.text.trim(),
-                                "backImage": _backController.text.trim(),
-                                "leftImage": _leftController.text.trim(),
-                                "rightImage": _rightController.text.trim(),
-                                "des": _productdes.text.trim(),
+                                "productName": productName.text.trim(),
+                                "productPrice": productPrice.text.trim(),
+                                "productSize": productSize.text.trim(),
+                                "productMaterial": productMaterial.text.trim(),
+                                "frontImage": frontController.text.trim(),
+                                "backImage": backController.text.trim(),
+                                "leftImage": leftController.text.trim(),
+                                "rightImage": rightController.text.trim(),
+                                "des": productdes.text.trim(),
                               });
-                              _productName.clear();
-                              _productPrice.clear();
-                              _productSize.clear();
-                              _productMaterial.clear();
-                              _frontController.clear();
-                              _backController.clear();
-                              _leftController.clear();
-                              _rightController.clear();
-                              _productdes.clear();
+                              productName.clear();
+                              productPrice.clear();
+                              productSize.clear();
+                              productMaterial.clear();
+                              frontController.clear();
+                              backController.clear();
+                              leftController.clear();
+                              rightController.clear();
+                              productdes.clear();
                               Navigator.of(context).pushReplacement(
                                   MaterialPageRoute(
                                       builder: (BuildContext context) =>
