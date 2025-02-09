@@ -3,7 +3,7 @@
 
     <application
         android:label="kapde"
-        android:name="${applicationName}" 
+        android:name="${com.example.kapde.MyApplication}" 
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">
         
