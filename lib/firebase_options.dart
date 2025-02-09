@@ -61,7 +61,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAZ0QwS7aEhIHfntJ1tnzNu2X9JdNPtCl8',
-    appId: '1:495700700414:android:f488331ff2677e46c089af',
+    appId: '1:495700700414:android:958a89acdccfa260c089af',
     messagingSenderId: '495700700414',
     projectId: 'kapde-20c40',
     storageBucket: 'kapde-20c40.firebasestorage.app',
