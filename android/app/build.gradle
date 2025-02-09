@@ -36,10 +36,9 @@ android {
 
 dependencies {
     implementation 'com.google.firebase:firebase-firestore:24.0.3'
-    implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.firebase:firebase-analytics:20.0.3'
-    implementation 'com.google.firebase:firebase-messaging:23.1.0'  
 }
+
 
 flutter {
     source = "../.."
